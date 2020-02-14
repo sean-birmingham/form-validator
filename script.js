@@ -72,3 +72,24 @@ form.addEventListener('submit', function(e) {
   checkEmail(email);
   checkPasswordsMatch(password, password2);
 });
+
+// Local storage for dark/light mode toggle
+$('body').toggleClass(localStorage.toggled);
+
+function darkLight() {
+  /*DARK CLASS*/
+  if (localStorage.toggled != 'dark') {
+    $('body').toggleClass('dark', true);
+    localStorage.toggled = 'dark';
+  } else {
+    $('body').toggleClass('dark', false);
+    localStorage.toggled = '';
+  }
+}
+
+/*Add 'checked' property to input if background == dark*/
+if ($('body').hasClass('dark')) {
+  $('#checkBox').prop('checked', true);
+} else {
+  $('#checkBox').prop('checked', false);
+}
