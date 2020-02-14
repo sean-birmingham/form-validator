@@ -11,4 +11,7 @@ Simple client side form validation. Check required, length, email and password m
 - checkEmail() to validate email with regex
 - checkPasswordsMatch() to match confirm password
 
+## Stretch
+- [ ] Add functionality for dark mode
+
 Project inspired from 20 Web Projects With Vanilla JavaScript by Brad Traversy :)
