@@ -10,8 +10,81 @@
 }
 
 body {
-    background-color: #f9fafb;
     font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+    transition: 0.3s ease;
+}
+
+/* Toggle Colors */
+.dark {
+    background-color: #121212;
+}
+
+.dark .form-container {
+    background-color: #1d1d1d;
+    color: #fff;
+}
+
+/* Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    float: right;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #121212;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #fff;
+  }
+
+input:checked + .slider:before {
+    background-color: #121212;
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded Sliders */
+.slider {
+    border-radius: 30px;
+}
+
+.slider:before {
+    border-radius: 50%;
+}
+
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,7 +92,7 @@ body {
     margin: 0;
 }
 
-.container {
+.form-container {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
@@ -42,9 +115,13 @@ h2 {
 }
 
 .form-control label {
-    color: #777;
+    color: #1d1d1d;
     display: block;
     margin-bottom: 5px;
+}
+
+.dark .form-control label {
+    color: #fff;
 }
 
 .form-control input {
